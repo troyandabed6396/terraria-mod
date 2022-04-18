@@ -17,18 +17,18 @@ namespace TestMod.Core.Items.Weapons.Ranger
 
 		public override void SetDefaults() 
 		{
-			item.damage = 1000;
+			item.damage = 5000;
 			item.ranged = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 50;
-			item.useAnimation = 50;
+			item.useTime = 2;
+			item.useAnimation = 3;
 			item.useStyle = 5;
 			item.knockBack = 8;
 			item.value = 100000;
 			item.rare = -12;
 			item.UseSound = SoundID.Item40;
-			item.autoReuse = false;
+			item.autoReuse = true;
             item.useAmmo = AmmoID.Bullet;
             item.shoot = AmmoID.Bullet;
             item.shootSpeed = 4.5f;
