@@ -8,6 +8,7 @@ namespace TestMod.Core.Items.Weapons.Melee
 {
 	public class ImposterSword : ModItem
 	{
+		public override string Texture => "TestMod/Sprites/Items/Weapons/Melee/ImposterSword";
 		public override void SetStaticDefaults() 
 		{
 			DisplayName.SetDefault("Sussy Stabber"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
