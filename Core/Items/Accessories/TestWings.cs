@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
 
-namespace TestMod.Core.Items.Acces.Accessories
+namespace TestMod.Core.Items.Accessories
 {
     [AutoloadEquip(EquipType.Wings)]
     public class TestWings : ModItem
