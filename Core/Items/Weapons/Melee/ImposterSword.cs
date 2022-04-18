@@ -17,18 +17,20 @@ namespace TestMod.Core.Items.Weapons.Melee
 
 		public override void SetDefaults() 
 		{
-			item.damage = 100;
+			item.damage = 69;
 			item.melee = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 50;
+			item.useTime = 15;
 			item.useAnimation = 30;
-			item.useStyle = 3;
-			item.knockBack = 0;
-			item.value = 10000;
+			item.useStyle = ItemUseStyleID.SwingThrow;
+			item.knockBack = 4;
+			item.value = 420;
 			item.rare = 10;
 			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			item.autoReuse = true;
+			item.shoot = mod.ProjectileType("AmongFard");
+			item.shootSpeed = 12;
 		}
 
         public override void MeleeEffects(Player player, Rectangle hitbox)
@@ -68,4 +70,25 @@ namespace TestMod.Core.Items.Weapons.Melee
 			recipe4.AddRecipe();
 		}
 	}
+
+	public class AmongFard : ModProjectile {
+		public override string Texture => "TestMod/Sprites/Projectiles/AmongFard";
+		public override void SetStaticDefaults() 
+		{
+			DisplayName.SetDefault("Sussus amogus"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+		}
+
+        public override void SetDefaults()
+        {
+            projectile.width = 30;
+			projectile.height = 30;
+			projectile.aiStyle = 3;
+			projectile.friendly = true;
+			projectile.maxPenetrate = 15;
+			projectile.extraUpdates = 1;
+			projectile.melee = true;
+			projectile.tileCollide = false;
+        }
+
+    }
 }
