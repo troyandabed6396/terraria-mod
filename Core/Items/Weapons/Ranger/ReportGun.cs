@@ -7,7 +7,8 @@ using Microsoft.Xna.Framework;
 namespace TestMod.Core.Items.Weapons.Ranger
 {
 	public class ReportGun : ModItem
-	{
+	{	
+		public override string Texture => "TestMod/Sprites/Items/Weapons/Ranger/ReportGun";
 		public override void SetStaticDefaults() 
 		{
 			DisplayName.SetDefault("REPOT!!!!1"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.

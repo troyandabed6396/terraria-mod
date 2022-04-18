@@ -1,0 +1,7 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace TestMod.Core {
+    public partial class AmongPlayer : ModPlayer {}
+}
