@@ -4,37 +4,42 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
 
-namespace TestMod.Core.Items.Weapons.Melee
+namespace TestMod.Core.Items.Weapons.Ranger
 {
-	public class ImposterSword : ModItem
+	public class ReportGun : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Sussy Stabber"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("impasta momenta");
+			DisplayName.SetDefault("REPOT!!!!1"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("L impasta");
 		}
 
 		public override void SetDefaults() 
 		{
-			item.damage = 100;
-			item.melee = true;
+			item.damage = 1000;
+			item.ranged = true;
 			item.width = 40;
 			item.height = 40;
 			item.useTime = 50;
-			item.useAnimation = 30;
-			item.useStyle = 3;
-			item.knockBack = 0;
-			item.value = 10000;
-			item.rare = 10;
-			item.UseSound = SoundID.Item1;
+			item.useAnimation = 50;
+			item.useStyle = 5;
+			item.knockBack = 8;
+			item.value = 100000;
+			item.rare = -12;
+			item.UseSound = SoundID.Item40;
 			item.autoReuse = false;
+            item.useAmmo = AmmoID.Bullet;
+            item.shoot = AmmoID.Bullet;
+            item.shootSpeed = 4.5f;
+            item.noMelee = true;
 		}
 
-        public override void MeleeEffects(Player player, Rectangle hitbox)
-            {
-                int dust = Dust.NewDust(new Vector2(hitbox.X, hitbox.Y+15), hitbox.Width, hitbox.Height-10, DustID.Blood, 0f, 0f, 0, default(Color), 1f);
-                Main.dust[dust].velocity *= 0;
-            }
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            Vector2 offset = new Vector2(speedX * 3, speedY * 3);
+            position += offset;
+            return true;
+        }
 
 		public override void AddRecipes() 
 		{
