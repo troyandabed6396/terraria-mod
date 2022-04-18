@@ -101,7 +101,7 @@ namespace TestMod.Core.Projectiles {
             
             projectile.friendly = foundTarget;
 
-            float speed = 8f;
+            float speed = 12f;
 			float inertia = 20f;
 
             if (foundTarget) {
@@ -112,12 +112,12 @@ namespace TestMod.Core.Projectiles {
             else {
                 if (distanceToIdlePosition > 600f) {
                         // Speed up the minion if it's away from the player
-                        speed = 12f;
+                        speed = 20f;
                         inertia = 60f;
                     }
                     else {
                         // Slow down the minion if closer to the player
-                        speed = 4f;
+                        speed = 8f;
                         inertia = 80f;
                     }
                     if (distanceToIdlePosition > 20f) {
