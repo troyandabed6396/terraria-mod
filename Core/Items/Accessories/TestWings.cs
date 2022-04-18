@@ -9,6 +9,7 @@ namespace TestMod.Core.Items.Acces.Accessories
     [AutoloadEquip(EquipType.Wings)]
     public class TestWings : ModItem
     {
+        public override string Texture => "TestMod/Sprites/Items/Accessories/TestWings";
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Test Wings");
