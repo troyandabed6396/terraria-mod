@@ -6,7 +6,7 @@ namespace TestMod.Core.Items.Armor {
     class RedArmor {
         [AutoloadEquip(EquipType.Head)]
         public class RedHelmet : ModItem {
-            public override string Texture => "TestMod/Core/Items/Armor/Sprites/Red/RedHelmet";
+            public override string Texture => "TestMod/Sprites/Items/Armor/Red/RedHelmet";
             public override void SetStaticDefaults() {
                 DisplayName.SetDefault("Red Helmet");
                 Tooltip.SetDefault("Quite the suspicious helmet...");
@@ -21,7 +21,8 @@ namespace TestMod.Core.Items.Armor {
             }
 
             public override void UpdateEquip(Player player) {
-                player.buffImmune[BuffID.Confused] = true;
+                player.confused = true;
+                player.AddBuff(BuffID.Confused, 0, true);
             }
 
             public override void AddRecipes() 
@@ -35,7 +36,7 @@ namespace TestMod.Core.Items.Armor {
         }
         [AutoloadEquip(EquipType.Legs)]
         public class RedLeggings : ModItem {
-            public override string Texture => "TestMod/Core/Items/Armor/Sprites/Red/RedLeggings";
+            public override string Texture => "TestMod/Sprites/Items/Armor/Red/RedLeggings";
             public override void SetStaticDefaults() {
                 DisplayName.SetDefault("Red Leggings");
                 Tooltip.SetDefault("Quite the suspicious drip...");
