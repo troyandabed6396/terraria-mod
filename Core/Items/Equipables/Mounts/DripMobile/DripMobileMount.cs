@@ -11,7 +11,7 @@ namespace TestMod.Core.Items.Equipables.Mounts.DripMobile
         public override void SetDefaults()
         {
             mountData.spawnDust = DustID.YellowTorch;
-            mountData.buff = mod.BuffType("DripMobileMountBuff");
+            mountData.buff = mod.BuffType("DripMobileBuff");
             mountData.heightBoost = 10;
             mountData.fallDamage = 1f;
             mountData.runSpeed = 15f;
