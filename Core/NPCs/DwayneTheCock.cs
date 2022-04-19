@@ -52,20 +52,22 @@ namespace TestMod.Core.NPCs {
                 npc.direction = betweenX > 0 ? 1 : -1;
                 npc.spriteDirection = npc.direction;
                 if (Collision.CanHitLine(npc.Center, 56, 27, playerTarget.position, playerTarget.width, playerTarget.height)) {
-                    shotTimer++;
-                    if(shotTimer > 50) {
-                        //Main.NewText("projectile should be spawning");
+                    shotCooldown = 50;
+                    shotCooldown--;
+                    if(shotCooldown <= 0) {
+                        Main.NewText("projectile should be spawning");
                         Projectile.NewProjectile(npc.Center, projectileDirection, type, damage, 1f, Main.myPlayer);
-                        shotTimer = 0;
+                        shotCooldown = 50;
                     }
                 }
             }
         }
 
-        public float shotTimer {
+        public float shotCooldown{
 	        get => npc.ai[0];
 	        set => npc.ai[0] = value;
         }
+
         private void Move(float speed) {
         if (npc.velocity.X * npc.direction <= speed)//getting up to max speed
             npc.velocity.X += 0.1f * npc.direction;
