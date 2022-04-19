@@ -8,6 +8,7 @@ using TestMod.Core;
 
 namespace TestMod.Core.NPCs {
     public class Dwayne : ModNPC {
+        bool gaveWok = false;
         public override string Texture => "TestMod/Sprites/NPCs/Dwayne";
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 1;
