@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TestMod.Core.Projectiles;
+using System.Collections.Generic;
 
 namespace TestMod.Core.NPCs {
     public class DwayneTheCock : ModNPC {
@@ -39,14 +40,24 @@ namespace TestMod.Core.NPCs {
             Vector2 projectileDirection = npc.DirectionTo(playerTarget.Center) * speed;
             int type = ModContent.ProjectileType<Cock>();
             int damage = npc.damage;
+            var lyrics = new Dictionary<int, string>() {
+                {0, "It’s about drive"},
+                {1, "It’s about power"},
+                {2, "We stay hungry"},
+                {3, "We devour"}
+            };
+            int lyricIndex = 0;
+            
 
-            //if (true == true) {
-            //    Main.NewText("distance from player: " + between);
-            //    Main.NewText("npc center x: " + npc.Center.X);
-            //    Main.NewText("player center x: " + playerTarget.Center.X);
-            //    Main.NewText("in range: " + (between <= scanRange));
-            //    Main.NewText("in line of sight: " + Collision.CanHitLine(npc.Center, 10, 5, playerTarget.position, playerTarget.width, playerTarget.height));
-            //}
+            if (true == true) {
+                Main.NewText("distance from player: " + between);
+                Main.NewText("npc center x: " + npc.Center.X);
+                Main.NewText("player center x: " + playerTarget.Center.X);
+                Main.NewText("in range: " + (between <= scanRange));
+                Main.NewText("in line of sight: " + Collision.CanHitLine(npc.Center, 10, 5, playerTarget.position, playerTarget.width, playerTarget.height));
+                Main.NewText("shot cooldown" + shotCooldown);
+                Main.NewText("lyric index" + lyricIndex);
+            }
 
             if (between <= scanRange && npc.HasValidTarget) {
                 npc.direction = betweenX > 0 ? 1 : -1;
@@ -56,8 +67,10 @@ namespace TestMod.Core.NPCs {
                     shotCooldown--;
                     if(shotCooldown <= 0) {
                         Main.NewText("projectile should be spawning");
+                        CombatText.NewText(new Rectangle((int) npc.Center.X - 100, (int) npc.Center.Y - 75, 200, 50), Color.White, lyrics[lyricIndex % 4], true, false);
                         Projectile.NewProjectile(npc.Center, projectileDirection, type, damage, 1f, Main.myPlayer);
                         shotCooldown = 50;
+                        lyricIndex++;
                     }
                 }
             }
