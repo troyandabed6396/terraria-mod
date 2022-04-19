@@ -75,7 +75,7 @@ namespace TestMod.Core.Items.Weapons.Melee
 		public override string Texture => "TestMod/Sprites/Projectiles/AmongFard";
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Sussus amogus"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			DisplayName.SetDefault("Sussus amogus"); 
 		}
 
         public override void SetDefaults()
