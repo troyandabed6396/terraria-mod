@@ -7,6 +7,8 @@ using TestMod.Core.Items.Misc;
 
 namespace TestMod.Core.NPCs {
     public class Dwayne : ModNPC {
+
+        public override string Texture => "TestMod/Sprites/NPCs/Dwayne";
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 1;
             NPCID.Sets.DangerDetectRange[npc.type] = 700;
@@ -65,14 +67,17 @@ namespace TestMod.Core.NPCs {
 
         public override void SetChatButtons(ref string button, ref string button2) {
             button = "The WOK?!?";
+            button2 = "The COCK ඞ";
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
             Player player = Main.LocalPlayer;
             if (firstButton) {
-                player.AddBuff(ModContent.BuffType<Sus>(), 69, false);
+                player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
                 player.QuickSpawnItem(ModContent.ItemType<TheWok>());
+            } else {
+                player.ClearBuff(ModContent.BuffType<WOKKED>());
             }
         }
     }

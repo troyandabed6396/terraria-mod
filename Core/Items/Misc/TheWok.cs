@@ -5,13 +5,11 @@ using Terraria.ID;
 namespace TestMod.Core.Items.Misc {
     public class TheWok : ModItem {
         public override string Texture => "TestMod/Sprites/Items/Misc/TheWok";
-        public override void SetDefaults()
-        {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("The Wok");
         }
 
-        public override void SetStaticDefaults()
-        {
+        public override void SetDefaults() {
             item.width = 32;
             item.height = 32;
             item.value = Item.buyPrice(69, 0, 0, 0);
