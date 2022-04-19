@@ -4,5 +4,7 @@ using Terraria.ModLoader;
 using TestMod.Core.Buffs;
 
 namespace TestMod.Core {
-    public class AmongPlayer : ModPlayer {}
+    public class AmongPlayer : ModPlayer {
+        public bool gaveWok = false;
+    }
 }
