@@ -4,5 +4,5 @@ using Terraria.ModLoader;
 using TestMod.Core.Buffs;
 
 namespace TestMod.Core {
-    public partial class AmongPlayer : ModPlayer {}
+    public class AmongPlayer : ModPlayer {}
 }
