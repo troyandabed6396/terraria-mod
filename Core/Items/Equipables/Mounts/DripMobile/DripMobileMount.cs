@@ -30,7 +30,7 @@ namespace TestMod.Core.Items.Equipables.Mounts.DripMobile
             mountData.playerYOffsets = offset;
             mountData.xOffset = 0;
             mountData.bodyFrame = 0;
-            mountData.yOffset = 5;
+            mountData.yOffset = 10;
             mountData.playerHeadOffset = 20;
 
             mountData.standingFrameCount = 1;
