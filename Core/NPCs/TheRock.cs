@@ -32,7 +32,7 @@ namespace TestMod.Core.NPCs
 
         public override bool PreNPCLoot()
         {
-            NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, (int)mod.NPCType("Dwayne"));
+            NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, (int)mod.NPCType("DwayneTheCock"));
             return true;
         }
     }
