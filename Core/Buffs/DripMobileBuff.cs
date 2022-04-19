@@ -3,9 +3,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace TestMod.Core.Items.Equipables.Mounts.DripMobile
+namespace TestMod.Core.Buffs
 {
-    public class DripMobileMountBuff : ModBuff
+    public class DripMobileBuff : ModBuff
     {
         public override void SetDefaults()
         {

@@ -31,5 +31,14 @@ namespace TestMod.Core.Items.Equipables.Mounts.DripMobile
 
             item.mountType = mod.MountType("DripMobileMount");
         }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.DirtBlock, 1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }
