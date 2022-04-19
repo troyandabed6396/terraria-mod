@@ -1,6 +1,0 @@
-using Terraria.ModLoader;
-using TestMod.Core.Buffs;
-
-namespace TestMod.Core {
-    public class AmongPlayer : ModPlayer {}
-}
