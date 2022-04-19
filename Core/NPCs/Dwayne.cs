@@ -4,6 +4,7 @@ using Terraria.ID;
 using TestMod.Core.Items.Weapons.Melee;
 using TestMod.Core.Buffs;
 using TestMod.Core.Items.Misc;
+using TestMod.Core;
 
 namespace TestMod.Core.NPCs {
     public class Dwayne : ModNPC {
@@ -73,20 +74,30 @@ namespace TestMod.Core.NPCs {
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
             Player player = Main.LocalPlayer;
+            AmongPlayer amongPlayer = player.GetModPlayer<AmongPlayer>();
             if (firstButton) {
-                if (!gaveWok) {
-                player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
-                player.QuickSpawnItem(ModContent.ItemType<TheWok>());
-                gaveWok = true;
+                if (!amongPlayer.gaveWok && !hasWok(player)) {
+                    player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
+                    player.QuickSpawnItem(ModContent.ItemType<TheWok>());
+                    amongPlayer.gaveWok = true;
                 } else {
                     player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
-                    Main.NewText("Already gave WOK, and you have been WOKKED.", 150, 250, 150);
+                    Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
 
                 }
 
             } else {
                 player.ClearBuff(ModContent.BuffType<WOKKED>());
             }
+        }
+
+        public bool hasWok(Player player) {
+            foreach (Item item in player.inventory) {
+                if (item.type == ModContent.ItemType<TheWok>()) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
