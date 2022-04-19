@@ -7,7 +7,6 @@ using TestMod.Core.Items.Misc;
 
 namespace TestMod.Core.NPCs {
     public class Dwayne : ModNPC {
-
         public override string Texture => "TestMod/Sprites/NPCs/Dwayne";
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 1;
@@ -74,8 +73,16 @@ namespace TestMod.Core.NPCs {
         {
             Player player = Main.LocalPlayer;
             if (firstButton) {
+                if (!gaveWok) {
                 player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
                 player.QuickSpawnItem(ModContent.ItemType<TheWok>());
+                gaveWok = true;
+                } else {
+                    player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
+                    Main.NewText("Already gave WOK, and you have been WOKKED.", 150, 250, 150);
+
+                }
+
             } else {
                 player.ClearBuff(ModContent.BuffType<WOKKED>());
             }

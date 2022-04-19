@@ -43,8 +43,8 @@ namespace TestMod.Core.Items.Armor {
             }
 
             public override void SetDefaults() {
-                item.width = 40;
-                item.height = 40;
+                item.width = 18;
+                item.height = 18;
                 item.value = 420;
                 item.rare = 3;
                 item.defense = 0;
