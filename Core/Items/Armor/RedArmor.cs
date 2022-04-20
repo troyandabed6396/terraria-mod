@@ -41,6 +41,8 @@ namespace TestMod.Core.Items.Armor {
                 player.rangedDamage *= 2f;
                 player.magicDamage *= 2f;
                 player.minionDamage *= 2f;
+
+                player.statDefense += 50;
             }
 
             public override void AddRecipes() 
