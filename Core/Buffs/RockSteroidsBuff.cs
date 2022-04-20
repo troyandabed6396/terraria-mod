@@ -19,7 +19,7 @@ namespace TestMod.Core.Buffs
             player.rangedDamage += 0.5f;
             player.magicDamage += 0.5f;
             player.minionDamage += 0.5f;
-            player.statLife += 60;
+            player.statLifeMax2 += 60;
         }
     }
 }
