@@ -24,11 +24,11 @@ namespace TestMod.Core.Items.Equipables.Mounts.DripMobile
             item.useAnimation = 15;
             item.useStyle = 1;
             item.knockBack = 3.5f;
-            item.value = 10000;
+            item.value = 10001;
             item.useStyle = 25;
             item.noMelee = true;
             item.rare = -12;
-            item.UseSound = mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/Custom/DababyLetsGo");
+            item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/DababyLetsGo");
 
             item.mountType = mod.MountType("DripMobileMount");
         }

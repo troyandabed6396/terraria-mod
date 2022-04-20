@@ -21,13 +21,13 @@ namespace TestMod.Core.Items.Weapons.Ranger
 			item.ranged = true;
 			item.width = 40;
 			item.height = 40;
-			item.useTime = 2;
-			item.useAnimation = 3;
+			item.useTime = 20;
+			item.useAnimation = 15;
 			item.useStyle = 5;
 			item.knockBack = 8;
 			item.value = 100000;
 			item.rare = -12;
-			item.UseSound = SoundID.Item40;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/AmongUsReport");
 			item.autoReuse = true;
             item.useAmmo = AmmoID.Bullet;
             item.shoot = AmmoID.Bullet;
@@ -36,10 +36,12 @@ namespace TestMod.Core.Items.Weapons.Ranger
 		}
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
+        {	
+			Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/Item/AmongUsReported"));
             Vector2 offset = new Vector2(speedX * 3, speedY * 3);
             position += offset;
             return true;
+		
         }
 
 		public override void AddRecipes() 
