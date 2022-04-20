@@ -12,7 +12,7 @@ namespace TestMod.Core.Sounds.Custom
 				return null;
 			}
 
-			soundInstance.Volume = volume * .5f;
+			soundInstance.Volume = volume * .375f;
 			soundInstance.Pan = pan;
 			soundInstance.Pitch = Main.rand.Next(-5, 6) * .05f;
 			return soundInstance;
