@@ -10,7 +10,7 @@ namespace TestMod.Core.Buffs
         {
             DisplayName.SetDefault("Stronk");
             Description.SetDefault("we stay hungry we devour");
-            Main.buffNoTimeDisplay[Type] = true;
+            Main.buffNoTimeDisplay[Type] = false;
         }
 
         public override void Update(Player player, ref int buffIndex)
