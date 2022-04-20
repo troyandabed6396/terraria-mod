@@ -43,6 +43,8 @@ namespace TestMod.Core.Projectiles {
                 projectile.timeLeft = 2;
             }
 
+            projectile.direction = projectile.spriteDirection = (projectile.velocity.X > 0f) ? 1 : -1;
+
             Vector2 idlePosition = player.Center;
             float minionPositionOffsetX = (10 + projectile.minionPos * 40) * -player.direction;
             idlePosition.X += minionPositionOffsetX;

@@ -19,7 +19,7 @@ namespace TestMod.Core.NPCs {
             npc.height = 56;
             npc.damage = 69;
             npc.defense = (int) 4.2;
-            npc.lifeMax = 420;
+            npc.lifeMax = 42069;
             npc.HitSound = SoundID.NPCHit42;
             npc.DeathSound = SoundID.NPCDeath1;
             npc.aiStyle = -1;

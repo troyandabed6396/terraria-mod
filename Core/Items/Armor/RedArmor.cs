@@ -17,13 +17,13 @@ namespace TestMod.Core.Items.Armor {
                 item.height = 18;
                 item.value = 69;
                 item.rare = ItemRarityID.Blue;
-                item.defense = 4;
+                item.defense = 5;
             }
 
-            public override void UpdateEquip(Player player) {
-                player.confused = true;
-                player.AddBuff(BuffID.Confused, 0, true);
-            }
+            // public override void UpdateEquip(Player player) {
+                // player.confused = true;
+                // player.AddBuff(BuffID.Confused, 0, true);
+            // }
 
             public override void AddRecipes() 
             {
@@ -47,11 +47,12 @@ namespace TestMod.Core.Items.Armor {
                 item.height = 18;
                 item.value = 420;
                 item.rare = 3;
-                item.defense = 0;
+                item.defense = 6;
             }
 
             public override void UpdateEquip(Player player) {
                 player.meleeDamage *= 3.5f;
+                player.moveSpeed += 0.50f; 
             }
 
             public override void AddRecipes() 
