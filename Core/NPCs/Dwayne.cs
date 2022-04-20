@@ -17,6 +17,8 @@ namespace TestMod.Core.NPCs {
 
         public override void SetDefaults()
         {
+            npc.height = 40;
+            npc.width = 18;
             npc.townNPC = true;
             npc.friendly = true;
             npc.aiStyle = 7;
