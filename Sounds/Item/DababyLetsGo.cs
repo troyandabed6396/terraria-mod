@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework.Audio;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace TestMod.Sounds.Custom
+namespace TestMod.Core.Sounds.Custom
 {
 	public class DababyLetsGo : ModSound
 	{
