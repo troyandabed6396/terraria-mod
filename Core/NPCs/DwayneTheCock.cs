@@ -65,6 +65,7 @@ namespace TestMod.Core.NPCs {
                     shotCooldown--;
                     if(shotCooldown <= 0) {
                         Main.NewText("projectile should be spawning");
+                        Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "TestMod/Sounds/Cock"), npc.Center);
                         CombatText.NewText(new Rectangle((int) npc.Center.X - 100, (int) npc.Center.Y - 40, 200, 50), Color.White, lyrics[lyricIndex % 4], true, false);
                         Projectile.NewProjectile(npc.Center, projectileDirection, type, damage, 1f, Main.myPlayer);
                         shotCooldown = 50;
