@@ -129,5 +129,9 @@ namespace TestMod.Core.NPCs {
             npc.velocity.X = 0;
             npc.velocity.Y = 0;
         }
+        public override void NPCLoot()
+        {
+            Item.NewItem(new Vector2(npc.Center.X, npc.Center.Y), (int)mod.ItemType("RockSteroids"));
+        }
     }
 }
