@@ -86,5 +86,9 @@ namespace TestMod.Core.NPCs {
         else if (npc.velocity.X * npc.direction >= speed + 0.1f)//slowdown if too fast
             npc.velocity.X -= 0.2f * npc.direction;
         }
+        public override void NPCLoot()
+        {
+            Item.NewItem(new Vector2(npc.Center.X, npc.Center.Y), (int)mod.ItemType("RockSteroids"));
+        }
     }
 }
