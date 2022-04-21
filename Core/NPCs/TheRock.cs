@@ -41,7 +41,7 @@ namespace TestMod.Core.NPCs
             Player player = Main.LocalPlayer;
             if (true == true)
                 Main.NewText("frame counter: " + npc.frameCounter);
-            if (Vector2.Distance(npc.position, player.position) < 300 && !(pc.life < npc.lifeMax)) 
+            if (Vector2.Distance(npc.position, player.position) < 300 && !(npc.life < npc.lifeMax)) 
                 npc.frameCounter = 1;
             else if (npc.life < npc.lifeMax) 
                 npc.frameCounter = 2;
