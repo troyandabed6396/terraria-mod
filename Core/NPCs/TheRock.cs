@@ -39,9 +39,9 @@ namespace TestMod.Core.NPCs
 
         public override void FindFrame(int frameHeight) {
             Player player = Main.LocalPlayer;
-            if (true == true)
-                Main.NewText("frame counter: " + npc.frameCounter);
-            if (Vector2.Distance(npc.position, player.position) < 300 && !(npc.life < npc.lifeMax)) 
+            // if (true == true)
+            //     Main.NewText("frame counter: " + npc.frameCounter);
+            if (Vector2.Distance(npc.position, player.position) < 200 && !(npc.life < npc.lifeMax)) 
                 npc.frameCounter = 1;
             else if (npc.life < npc.lifeMax) 
                 npc.frameCounter = 2;
