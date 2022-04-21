@@ -8,7 +8,6 @@ using TestMod.Core;
 
 namespace TestMod.Core.NPCs {
     public class Dwayne : ModNPC {
-        bool gaveWok = false;
         public override string Texture => "TestMod/Sprites/NPCs/Dwayne";
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 1;
@@ -27,7 +26,6 @@ namespace TestMod.Core.NPCs {
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
             npc.knockBackResist = 0.5f;
-            animationType = NPCID.Guide;
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money) {
