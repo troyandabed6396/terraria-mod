@@ -27,7 +27,7 @@ namespace TestMod.Core.Items.Weapons.Ranger
 			item.knockBack = 8;
 			item.value = 100000;
 			item.rare = -12;
-			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/AmongUsReport");
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Custom/AmongUsReport");
 			item.autoReuse = true;
             item.useAmmo = AmmoID.Bullet;
             item.shoot = AmmoID.Bullet;

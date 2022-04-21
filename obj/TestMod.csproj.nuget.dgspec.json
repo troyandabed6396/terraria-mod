@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj": {}
+    "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj": {}
   },
   "projects": {
-    "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj": {
+    "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
+        "projectUniqueName": "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
         "projectName": "TestMod",
-        "projectPath": "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
+        "projectPath": "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
         "packagesPath": "C:\\Users\\armaa\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\obj\\",
+        "outputPath": "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\armaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,7 +45,7 @@
               "version": "[0.1.*, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

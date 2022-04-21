@@ -5,12 +5,12 @@ using Terraria.ModLoader;
 
 namespace TestMod.Core.Items.Placeables
 {
-    public class TestTile : ModItem
+    public class Cockonut : ModItem
     {
-        public override string Texture => "TestMod/Sprites/Items/Placeables/TestTile";
+        public override string Texture => "TestMod/Sprites/Items/Placeables/Cockonut";
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("WWWW");
+            Tooltip.SetDefault("SIR PERGY");
         }
         public override void SetDefaults()
         {
@@ -23,7 +23,7 @@ namespace TestMod.Core.Items.Placeables
 			item.useTime = 10;
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.consumable = true;
-            item.createTile = ModContent.TileType<Core.Tiles.Blocks.TestTile>();
+            item.createTile = ModContent.TileType<Core.Tiles.Blocks.Cockonut>();
         }
     }
 }

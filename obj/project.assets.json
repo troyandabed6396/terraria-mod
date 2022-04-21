@@ -2,23 +2,23 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.5": {
-      "tModLoader.CodeAssist/0.1.3": {
+      "tModLoader.CodeAssist/0.1.4": {
         "type": "package"
       }
     }
   },
   "libraries": {
-    "tModLoader.CodeAssist/0.1.3": {
-      "sha512": "2TVpwEsbJF+LZOGZ7q/VTTcsnFnQzngjVOcwkzGlXimFXEMjPROLjDv32F/eA+k2MLHtdL0DJ0JNWudUVs70fw==",
+    "tModLoader.CodeAssist/0.1.4": {
+      "sha512": "X6CJQ4sVJHJx3paDt/YCWJnLfSCI0CqJO+jBIeL7aABSMMjDFUHykeHy60lISWqOKWH8SionloBya9YbQsBzNA==",
       "type": "package",
-      "path": "tmodloader.codeassist/0.1.3",
+      "path": "tmodloader.codeassist/0.1.4",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "NugetIcon.png",
         "analyzers/dotnet/cs/tModLoader.CodeAssist.dll",
-        "tmodloader.codeassist.0.1.3.nupkg.sha512",
+        "tmodloader.codeassist.0.1.4.nupkg.sha512",
         "tmodloader.codeassist.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
@@ -36,11 +36,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
+      "projectUniqueName": "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
       "projectName": "TestMod",
-      "projectPath": "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
+      "projectPath": "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\TestMod.csproj",
       "packagesPath": "C:\\Users\\armaa\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\obj\\",
+      "outputPath": "C:\\Users\\armaa\\OneDrive\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TestMod\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\armaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,7 +74,7 @@
             "version": "[0.1.*, )"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
