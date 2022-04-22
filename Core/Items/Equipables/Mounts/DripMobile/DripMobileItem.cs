@@ -28,7 +28,7 @@ namespace TestMod.Core.Items.Equipables.Mounts.DripMobile
             item.useStyle = 25;
             item.noMelee = true;
             item.rare = -12;
-            item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Custom/DababyLetsGo");
+            item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/DababyLetsGo");
 
             item.mountType = mod.MountType("DripMobileMount");
         }
