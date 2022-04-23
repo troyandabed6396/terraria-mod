@@ -15,6 +15,7 @@ namespace TestMod.Core.Tiles.Blocks {
             Main.tileShine2[Type] = true;
             Main.tileMergeDirt[Type] = false;
             Main.tileBlockLight[Type] = true;
+            Main.tileFrameImportant[Type] = true;
 
             ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Cockonut");
