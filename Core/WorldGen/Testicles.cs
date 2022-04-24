@@ -84,9 +84,7 @@ namespace TestMod.Core.WorldGeneration {
             }
         }
 
-        public override void Initialize() {
-            
-        }
+
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight) {
             if (tasks.FindIndex(genpass => genpass.Name.Equals("Shinies")) != -1) {
                 tasks.Insert(tasks.FindIndex(genpass => genpass.Name.Equals("Sunflowers")) + 1, new PassLegacy("TestTile", TestTile));
