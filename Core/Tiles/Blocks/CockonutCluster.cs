@@ -10,9 +10,9 @@ using Terraria.ObjectData;
 namespace TestMod.Core.Tiles.Blocks {
     public class CockonutCluster : ModTile {
         public override void SetDefaults() {
-            Main.tileSolid[Type] = false;
+            Main.tileSolid[Type] = true;
             Main.tileSolidTop[Type] = true;
-            
+
             Main.tileValue[Type] = 869;
             Main.tileShine[Type] = 975;
             Main.tileShine2[Type] = true;

@@ -8,9 +8,25 @@ using Terraria.GameContent.Generation;
 using TestMod.Core.Tiles.Blocks;
 using Microsoft.Xna.Framework;
 using static Terraria.ModLoader.ModContent;
+using System.IO;
+using Terraria.ModLoader.IO;
 
 namespace TestMod.Core.WorldGeneration {
     public class Testicles : ModWorld {
+        public static bool savedKeanu;
+        public override void Initialize() {
+            savedKeanu = false;
+        }
+
+        public override void Load(TagCompound tag) {
+		    savedKeanu = tag.GetBool("savedKeanu");
+	    }
+
+        public override TagCompound Save() {
+		    return new TagCompound {
+			    {"savedKeanu", savedKeanu }
+		    };
+	    }
         private void TestTile(GenerationProgress progress) {
             progress.Message = "+[--------->++<]>+.+.+[->+++<]>++.+[--->+<]>+++.-[---->+<]>++.+[----->+<]>.------------.+++.";
 
