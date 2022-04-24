@@ -47,8 +47,9 @@ namespace TestMod.Core.WorldGeneration {
             for (int depth = islandCoords.Y + WorldGen.genRand.Next(15, 20); depth > topLayer; depth--) {
                 int tilesInRow = (int) (islandWidth * Math.Pow(islandWidth, Math.Abs(islandCoords.Y - depth) * -0.025));
                 for (int width = WorldGen.genRand.Next(islandCoords.X - 2, islandCoords.X + 2) - tilesInRow/2; width < WorldGen.genRand.Next(islandCoords.X - 2, islandCoords.X + 2) + tilesInRow/2; width++) {
-                    if (depth - topLayer > 1)
-                        WorldGen.TileRunner(width, depth, WorldGen.genRand.Next(1, 4), 6, TileID.Sand, true, 0, 0, true, true); // doesnt work btw
+                    if (depth - topLayer > 3) {
+                        WorldGen.TileRunner(width, depth, WorldGen.genRand.Next(1, 4), 6, TileID.Sand, true, 0, 0, true, true);
+                    }
                     WorldGen.PlaceTile(width, depth, TileID.Sand, false, true);
                 }
             }
@@ -63,8 +64,7 @@ namespace TestMod.Core.WorldGeneration {
                         break;
                 }
                 WorldGen.PlaceWall(x, topLayer + 1, WallID.Dirt);
-                if (WorldGen.genRand.Next(2) == 2)
-                    WorldGen.PlaceWall(x, topLayer + 2, WallID.Dirt);
+                WorldGen.PlaceWall(x, topLayer + 2, WallID.Dirt);
             }
         }
 
