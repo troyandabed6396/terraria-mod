@@ -63,6 +63,8 @@ namespace TestMod.Core.WorldGeneration {
                         break;
                 }
                 WorldGen.PlaceWall(x, topLayer + 1, WallID.Sandstone);
+                if (WorldGen.genRand.Next(2) == 2)
+                    WorldGen.PlaceWall(x, topLayer + 2, WallID.Sandstone);
             }
         }
 
