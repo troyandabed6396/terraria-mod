@@ -84,12 +84,10 @@ namespace TestMod.Core.NPCs {
                     player.QuickSpawnItem(ModContent.ItemType<TheWok>());
                     amongPlayer.gaveWok = true;
                 } else {
+                    if (!amongPlayer.gaveWok)
+                        amongPlayer.gaveWok = true;
                     player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
                     Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
-
-                }
-                if (Testicles.savedKeanu) {
-                    Main.npcChatText = "HHHEEE";
                 }
             } else {
                 player.ClearBuff(ModContent.BuffType<WOKKED>());

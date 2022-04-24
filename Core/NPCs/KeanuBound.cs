@@ -21,7 +21,7 @@ namespace TestMod.Core.NPCs {
             npc.width = 18;
             npc.townNPC = true;
             npc.friendly = true;
-            npc.aiStyle = 7;
+            npc.aiStyle = 0;
             npc.defense = 42069;
             npc.lifeMax = 69000;
             npc.HitSound = SoundID.NPCHit1;

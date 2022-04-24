@@ -8,7 +8,7 @@ using Terraria.GameContent.Generation;
 using TestMod.Core.Tiles.Blocks;
 using Microsoft.Xna.Framework;
 using static Terraria.ModLoader.ModContent;
-using System.IO;
+using TestMod.Core.NPCs;
 using Terraria.ModLoader.IO;
 
 namespace TestMod.Core.WorldGeneration {
@@ -24,7 +24,7 @@ namespace TestMod.Core.WorldGeneration {
 
         public override TagCompound Save() {
 		    return new TagCompound {
-			    {"savedKeanu", savedKeanu }
+			    {"savedKeanu", savedKeanu}
 		    };
 	    }
         private void TestTile(GenerationProgress progress) {
@@ -44,6 +44,8 @@ namespace TestMod.Core.WorldGeneration {
             
         }
 
+        int gamingKeanuSpawnX;
+        int gamingKeanuSpawnY;
         private void RedditIsland(GenerationProgress progress) {
             progress.Message = "Mining Dogecoin (Chungus Wholesome)";
             Point islandCoords = new Point();
@@ -52,6 +54,7 @@ namespace TestMod.Core.WorldGeneration {
             else 
                 islandCoords.X = WorldGen.genRand.Next(100, 150);
 
+            gamingKeanuSpawnX = islandCoords.X;
             for (int y = (int) WorldGen.worldSurface - 100; y < (int) WorldGen.worldSurface + 50; y++) {
                 if (Framing.GetTileSafely(islandCoords.X, y).liquid > 0) {
                     islandCoords.Y = y;
@@ -62,6 +65,7 @@ namespace TestMod.Core.WorldGeneration {
             int islandWidth = WorldGen.genRand.Next(50, 75);
             int topLayer = islandCoords.Y - WorldGen.genRand.Next(5, 10);
             int topLayerWidth = (int) (islandWidth * Math.Pow(islandWidth, Math.Abs(islandCoords.Y - topLayer) * -0.025));
+            gamingKeanuSpawnY = topLayer - 2;
 
             for (int depth = islandCoords.Y + WorldGen.genRand.Next(15, 20); depth > topLayer; depth--) {
                 int tilesInRow = (int) (islandWidth * Math.Pow(islandWidth, Math.Abs(islandCoords.Y - depth) * -0.025));
@@ -123,15 +127,21 @@ namespace TestMod.Core.WorldGeneration {
                 WorldGen.PlaceTile(x, Y - length - radius, TileType<Cockonut>());
             }
         }
-
-        public override void Initialize() {
-            
-        }
         public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight) {
             if (tasks.FindIndex(genpass => genpass.Name.Equals("Shinies")) != -1) {
                 tasks.Insert(tasks.FindIndex(genpass => genpass.Name.Equals("Sunflowers")) + 1, new PassLegacy("TestTile", TestTile));
                 tasks.Insert(tasks.FindIndex(genpass => genpass.Name.Equals("Micro Biomes")) + 1, new PassLegacy("Reddit Island", RedditIsland));
             }
+        }
+
+        public override void PostWorldGen() {
+            // int gamingKeanu = NPC.NewNPC(gamingKeanuSpawnX, gamingKeanuSpawnY, NPCType<KeanuGaming>());
+            int gamingKeanu = NPC.NewNPC(Main.spawnTileX, Main.spawnTileY - 5, NPCType<KeanuGaming>());
+            // Main.npc[gamingKeanu].homeTileX = gamingKeanuSpawnX;
+            // Main.npc[gamingKeanu].homeTileY = gamingKeanuSpawnY;
+            Main.npc[gamingKeanu].direction = gamingKeanuSpawnX > Main.dungeonX ? -1 : 1;
+            Main.npc[gamingKeanu].spriteDirection = Main.npc[gamingKeanu].direction;
+            Main.npc[gamingKeanu].homeless = true;
         }
     }
 }

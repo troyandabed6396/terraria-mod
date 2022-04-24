@@ -11,6 +11,7 @@ using Terraria.Localization;
 
 
 namespace TestMod.Core.NPCs {
+    [AutoloadHead]
     public class Keanu : ModNPC {
         public override bool Autoload(ref string name)
         {
@@ -19,6 +20,7 @@ namespace TestMod.Core.NPCs {
         }
         public override string Texture => "TestMod/Sprites/NPCs/DwayneTheCock";
         public override void SetStaticDefaults() {
+            DisplayName.SetDefault("The President");
             Main.npcFrameCount[npc.type] = 1;
             // NPCID.Sets.DangerDetectRange[npc.type] = 700;
             
