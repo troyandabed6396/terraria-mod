@@ -62,9 +62,9 @@ namespace TestMod.Core.WorldGeneration {
                         WorldGen.PlaceTile(x, topLayer + 1, TileID.Sand, false, true);
                         break;
                 }
-                WorldGen.PlaceWall(x, topLayer + 1, WallID.Sandstone);
+                WorldGen.PlaceWall(x, topLayer + 1, WallID.Dirt);
                 if (WorldGen.genRand.Next(2) == 2)
-                    WorldGen.PlaceWall(x, topLayer + 2, WallID.Sandstone);
+                    WorldGen.PlaceWall(x, topLayer + 2, WallID.Dirt);
             }
         }
 
