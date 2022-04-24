@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TestMod.Core.WorldGeneration;
-using Terraria.Localization;
+
 
 
 namespace TestMod.Core.NPCs {
