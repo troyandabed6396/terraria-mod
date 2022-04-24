@@ -42,7 +42,7 @@ namespace TestMod.Core.WorldGeneration {
         }
 
         private void RedditIsland(GenerationProgress progress) {
-            progress.Message = "Mining Dogecoin (Chungus Wholesome)...";
+            progress.Message = "Mining Dogecoin (Chungus Wholesome)";
             Point islandCoords = new Point();
             if (Main.dungeonX > Main.spawnTileX)
                 islandCoords.X =  WorldGen.genRand.Next(Main.maxTilesX - 150, Main.maxTilesX - 100);
@@ -63,13 +63,14 @@ namespace TestMod.Core.WorldGeneration {
             for (int depth = islandCoords.Y + WorldGen.genRand.Next(15, 20); depth > topLayer; depth--) {
                 int tilesInRow = (int) (islandWidth * Math.Pow(islandWidth, Math.Abs(islandCoords.Y - depth) * -0.025));
                 for (int width = WorldGen.genRand.Next(islandCoords.X - 2, islandCoords.X + 2) - tilesInRow/2; width < WorldGen.genRand.Next(islandCoords.X - 2, islandCoords.X + 2) + tilesInRow/2; width++) {
+                    if (depth - topLayer > 1)
+                        WorldGen.TileRunner(width, depth, WorldGen.genRand.Next(1, 4), 6, TileID.Sand, true, 0, 0, true, true); // doesnt work btw
                     WorldGen.PlaceTile(width, depth, TileID.Sand, false, true);
-                    WorldGen.TileRunner(width, depth, WorldGen.genRand.Next(3, 6), 8, TileType<Cockonut>()); // doesnt work btw
                 }
             }
             
             for (int x = islandCoords.X - topLayerWidth/2; x < islandCoords.X + topLayerWidth/2; x++) {
-                switch (WorldGen.genRand.Next(2)) {
+                switch (WorldGen.genRand.Next(3)) {
                     case 1:
                         WorldGen.GrowPalmTree(x, topLayer + 1);
                         break;
@@ -77,6 +78,9 @@ namespace TestMod.Core.WorldGeneration {
                         WorldGen.PlaceTile(x, topLayer + 1, TileID.Sand, false, true);
                         break;
                 }
+                WorldGen.PlaceWall(x, topLayer + 1, WallID.Dirt);
+                if (WorldGen.genRand.Next(2) == 2)
+                    WorldGen.PlaceWall(x, topLayer + 2, WallID.Dirt);
             }
         }
 
