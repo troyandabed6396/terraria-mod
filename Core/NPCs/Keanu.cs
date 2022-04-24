@@ -5,15 +5,22 @@ using TestMod.Core.Items.Weapons.Melee;
 using TestMod.Core.Buffs;
 using TestMod.Core.Items.Misc;
 using TestMod.Core;
+using TestMod.Core.WorldGeneration;
+using Terraria.Localization;
 // using Terraria.NPC;
 
 
 namespace TestMod.Core.NPCs {
     public class Keanu : ModNPC {
-        public override string Texture => "TestMod/Sprites/NPCs/Dwayne";
+        public override bool Autoload(ref string name)
+        {
+            name = "Keanu";
+            return mod.Properties.Autoload;
+        }
+        public override string Texture => "TestMod/Sprites/NPCs/DwayneTheCock";
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 1;
-            NPCID.Sets.DangerDetectRange[npc.type] = 700;
+            // NPCID.Sets.DangerDetectRange[npc.type] = 700;
             
         }
 
@@ -31,31 +38,21 @@ namespace TestMod.Core.NPCs {
             npc.knockBackResist = 0.5f;
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money) {
+        public override bool CanTownNPCSpawn(int numTownNPCs, int money) => true; //{
+        //     if (Testicles.savedKeanu) {
+        //         return true;
+        //     }
+        //     return true;
+        // }
 
-            return false;
-        }
-        public override bool CheckConditions(int left, int right, int top, int bottom) {
-            return true;
-        }
 
         public override string TownNPCName() {
-			return "Dwayne, \"The Rock\", Johnson";
+			return "Keanu";
 		}
 
         public override string GetChat() {
-            switch (Main.rand.Next(4)) {
-                case 0:
-                    return "Just because you have muscles, doesn't mean you're not sus.";
-                case 1:
-                    return "You can be my rock, and I'll be your stone.";
-                case 2: 
-                    return "I wake up every morning and piss excellence.";
-                case 3:
-                    return "If you smell what the rock is cooking, then you know what time it is: time to get sus!";
-                default:
-                    return "You can smell what The Rock is cooking, and it's a big pot of SUS!";
-            }
+       
+            return "None";
         }
 
         public override void SetChatButtons(ref string button, ref string button2) {
@@ -68,28 +65,13 @@ namespace TestMod.Core.NPCs {
             Player player = Main.LocalPlayer;
             AmongPlayer amongPlayer = player.GetModPlayer<AmongPlayer>();
             if (firstButton) {
-                if (!amongPlayer.gaveWok && !hasWok(player)) {
-                    player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
-                    player.QuickSpawnItem(ModContent.ItemType<TheWok>());
-                    amongPlayer.gaveWok = true;
-                } else {
-                    player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
-                    Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
+                Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
 
-                }
+                
 
             } else {
-                player.ClearBuff(ModContent.BuffType<WOKKED>());
+                Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
             }
-        }
-
-        public bool hasWok(Player player) {
-            foreach (Item item in player.inventory) {
-                if (item.type == ModContent.ItemType<TheWok>()) {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

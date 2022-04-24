@@ -13,18 +13,18 @@ using Terraria.ModLoader.IO;
 
 namespace TestMod.Core.WorldGeneration {
     public class Testicles : ModWorld {
-        public static bool savedTest;
+        public static bool savedKeanu;
         public override void Initialize() {
-            savedTest = false;
+            savedKeanu = false;
         }
 
         public override void Load(TagCompound tag) {
-		    savedTest = tag.GetBool("savedTest");
+		    savedKeanu = tag.GetBool("savedKeanu");
 	    }
 
         public override TagCompound Save() {
 		    return new TagCompound {
-			    {"savedTest", savedTest }
+			    {"savedKeanu", savedKeanu }
 		    };
 	    }
         private void TestTile(GenerationProgress progress) {

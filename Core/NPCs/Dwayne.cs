@@ -6,6 +6,8 @@ using TestMod.Core.Buffs;
 using TestMod.Core.Items.Misc;
 using TestMod.Core;
 using TestMod.Core.WorldGeneration;
+using Terraria.Localization;
+
 
 namespace TestMod.Core.NPCs {
     public class Dwayne : ModNPC {
@@ -22,8 +24,8 @@ namespace TestMod.Core.NPCs {
             npc.townNPC = true;
             npc.friendly = true;
             npc.aiStyle = 7;
-            npc.defense = 42069;
-            npc.lifeMax = 69000;
+            npc.defense = 690;
+            npc.lifeMax = 42069;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
             npc.knockBackResist = 0.5f;
@@ -86,13 +88,9 @@ namespace TestMod.Core.NPCs {
                     Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
 
                 }
-                if (!Testicles.savedTest) {
-                    player.AddBuff(ModContent.BuffType<DripMobileBuff>(), 1000);
-                    Testicles.savedTest = true;
-                } else if (Testicles.savedTest) {
-                    Main.npcChatText = "RIP";
+                if (Testicles.savedKeanu) {
+                    Main.npcChatText = "HHHEEE";
                 }
-
             } else {
                 player.ClearBuff(ModContent.BuffType<WOKKED>());
             }
