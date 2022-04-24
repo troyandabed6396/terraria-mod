@@ -5,14 +5,16 @@ using TestMod.Core.Items.Weapons.Melee;
 using TestMod.Core.Buffs;
 using TestMod.Core.Items.Misc;
 using TestMod.Core;
-using TestMod.Core.WorldGeneration;
+// using Terraria.NPC;
+
 
 namespace TestMod.Core.NPCs {
-    public class Dwayne : ModNPC {
+    public class Keanu : ModNPC {
         public override string Texture => "TestMod/Sprites/NPCs/Dwayne";
         public override void SetStaticDefaults() {
             Main.npcFrameCount[npc.type] = 1;
             NPCID.Sets.DangerDetectRange[npc.type] = 700;
+            
         }
 
         public override void SetDefaults()
@@ -30,18 +32,7 @@ namespace TestMod.Core.NPCs {
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs, int money) {
-            for (int k = 0; k < 255; k++) {
-                    Player player = Main.player[k];
-                    if (!player.active) {
-                        continue;
-                    }
 
-                    foreach (Item item in player.inventory) {
-                        if (item.type == ModContent.ItemType<ImposterSword>()) {
-                            return true;
-                        }
-                    }
-                }
             return false;
         }
         public override bool CheckConditions(int left, int right, int top, int bottom) {
@@ -85,12 +76,6 @@ namespace TestMod.Core.NPCs {
                     player.AddBuff(ModContent.BuffType<WOKKED>(), 18000);
                     Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
 
-                }
-                if (!Testicles.savedTest) {
-                    player.AddBuff(ModContent.BuffType<DripMobileBuff>(), 1000);
-                    Testicles.savedTest = true;
-                } else if (Testicles.savedTest) {
-                    Main.npcChatText = "RIP";
                 }
 
             } else {
