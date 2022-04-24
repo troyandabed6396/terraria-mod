@@ -49,12 +49,33 @@ namespace TestMod.Core.WorldGeneration {
             else 
                 islandCoords.X = WorldGen.genRand.Next(100, 150);
 
-            islandCoords.Y = (int) WorldGen.worldSurface - 10;
-            int islandWidth = WorldGen.genRand.Next(32, 64);
+            for (int y = (int) WorldGen.worldSurface - 100; y < (int) WorldGen.worldSurface + 50; y++) {
+                if (Framing.GetTileSafely(islandCoords.X, y).liquid > 0) {
+                    islandCoords.Y = y;
+                    break;
+                }
+            }
+            // islandCoords.Y = (int) WorldGen.worldSurface;
+            int islandWidth = WorldGen.genRand.Next(50, 75);
+            int topLayer = islandCoords.Y - WorldGen.genRand.Next(5, 10);
+            int topLayerWidth = (int) (islandWidth * Math.Pow(islandWidth, Math.Abs(islandCoords.Y - topLayer) * -0.025));
 
-            for (int depth = islandCoords.Y - WorldGen.genRand.Next(10, 20); depth < islandCoords.Y + WorldGen.genRand.Next(5, 10); depth++) {
-                for (int width = islandCoords.X - islandWidth/2; width < islandCoords.X + islandWidth/2; width++) {
-                    WorldGen.TileRunner(width, depth, WorldGen.genRand.Next(1, 4), 8, TileType<Cockonut>());
+            for (int depth = islandCoords.Y + WorldGen.genRand.Next(15, 20); depth > topLayer; depth--) {
+                int tilesInRow = (int) (islandWidth * Math.Pow(islandWidth, Math.Abs(islandCoords.Y - depth) * -0.025));
+                for (int width = WorldGen.genRand.Next(islandCoords.X - 2, islandCoords.X + 2) - tilesInRow/2; width < WorldGen.genRand.Next(islandCoords.X - 2, islandCoords.X + 2) + tilesInRow/2; width++) {
+                    WorldGen.PlaceTile(width, depth, TileID.Sand, false, true);
+                    WorldGen.TileRunner(width, depth, WorldGen.genRand.Next(3, 6), 8, TileType<Cockonut>()); // doesnt work btw
+                }
+            }
+            
+            for (int x = islandCoords.X - topLayerWidth/2; x < islandCoords.X + topLayerWidth/2; x++) {
+                switch (WorldGen.genRand.Next(2)) {
+                    case 1:
+                        WorldGen.GrowPalmTree(x, topLayer + 1);
+                        break;
+                    case 2:
+                        WorldGen.PlaceTile(x, topLayer + 1, TileID.Sand, false, true);
+                        break;
                 }
             }
         }
