@@ -69,8 +69,6 @@ namespace TestMod.Core.NPCs {
             if (firstButton) {
                 Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
 
-                
-
             } else {
                 Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
             }
