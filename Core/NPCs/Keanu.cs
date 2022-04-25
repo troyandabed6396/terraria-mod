@@ -59,7 +59,7 @@ namespace TestMod.Core.NPCs {
                 case 1:
                     return "Big chungus wholesome 100 if you know what I mean.";
                 case 2: 
-                    return "I'm not racist but I don't like black people.'";
+                    return "I'm not racist but I don't like black people.";
                 case 3:
                     return "dont care + didnt ask + cry about it + stay mad + get real + L + mald seethe cope harder.";
                 default:
