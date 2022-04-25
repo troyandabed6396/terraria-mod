@@ -3,8 +3,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using TestMod.Core.Projectiles;
+using TestMod.Core.Items.Misc;
 using System.Collections.Generic;
-using System;
 
 namespace TestMod.Core.NPCs {
     public class DwayneTheCock : ModNPC {
@@ -129,7 +129,8 @@ namespace TestMod.Core.NPCs {
             npc.velocity.Y = 0;
         }
         public override void NPCLoot() {
-            Item.NewItem(new Vector2(npc.Center.X, npc.Center.Y), (int)mod.ItemType("RockSteroids"));
+            Item.NewItem(npc.Center, (int) ModContent.ItemType<RockSteroids>());
+            Item.NewItem(npc.Center, (int) ModContent.ItemType<Dogecoin>(), 25);
         }
     }
 }

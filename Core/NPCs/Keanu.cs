@@ -40,12 +40,12 @@ namespace TestMod.Core.NPCs {
             npc.knockBackResist = 0.5f;
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money) => true; //{
-        //     if (Testicles.savedKeanu) {
-        //         return true;
-        //     }
-        //     return true;
-        // }
+        public override bool CanTownNPCSpawn(int numTownNPCs, int money) {
+            if (Testicles.savedKeanu) {
+                return true;
+            }
+            return false;
+        }
 
 
         public override string TownNPCName() {
@@ -53,25 +53,26 @@ namespace TestMod.Core.NPCs {
 		}
 
         public override string GetChat() {
-       
-            return "None";
+            switch (Main.rand.Next(4)) {
+                case 0:
+                    return "Updoot!";
+                case 1:
+                    return "Big chungus wholesome 100 if you know what I mean.";
+                case 2: 
+                    return "I'm not racist but I don't like black people.'";
+                case 3:
+                    return "dont care + didnt ask + cry about it + stay mad + get real + L + mald seethe cope harder.";
+                default:
+                    return "Got any Dogecoin you sussy 'mogus?";
+            }
         }
 
         public override void SetChatButtons(ref string button, ref string button2) {
-            button = "The WOK?!?";
-            button2 = "The COCK ඞ";
+            button = "Darude Sandstorm";
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
-        {
-            Player player = Main.LocalPlayer;
-            AmongPlayer amongPlayer = player.GetModPlayer<AmongPlayer>();
-            if (firstButton) {
-                Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
-
-            } else {
-                Main.npcChatText = "Already gave WOK, and you have been WOKKED.";
-            }
+        public override void OnChatButtonClicked(bool firstButton, ref bool shop) {
+        
         }
     }
 }

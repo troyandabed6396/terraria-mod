@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
+using TestMod.Core.Items.Misc;
 using TestMod.Core.WorldGeneration;
 
 
@@ -33,10 +33,11 @@ namespace TestMod.Core.NPCs {
 			return "Keanu";
         }
         public override string GetChat() {
+            Player player = Main.LocalPlayer;
             npc.Transform(ModContent.NPCType<Keanu>());
             Testicles.savedKeanu = true;
-            return "";
-            
+            player.QuickSpawnItem(ModContent.ItemType<Dogecoin>(), 25);
+            return "";   
         }
     }
 }
