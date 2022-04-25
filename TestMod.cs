@@ -8,8 +8,9 @@ namespace TestMod
 {
 	public class TestMod : Mod {
 		public static int dogecoin;
+		public TestMod() {}
 		public override void Load() {
-			int dogecoin = CustomCurrencyManager.RegisterCurrency(new DogecoinCurrency(ModContent.ItemType<Dogecoin>(), 999L));
+			dogecoin = CustomCurrencyManager.RegisterCurrency(new DogecoinCurrency(ModContent.ItemType<Dogecoin>(), 999L));
 		}
 	}
 }

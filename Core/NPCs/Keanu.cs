@@ -72,7 +72,15 @@ namespace TestMod.Core.NPCs {
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref bool shop) {
-        
+            if (firstButton)
+                shop = true;
+        }
+
+        public override void SetupShop(Chest shop, ref int nextSlot) {
+            shop.item[nextSlot].SetDefaults(ModContent.ItemType<TheWok>());
+            shop.item[nextSlot].shopCustomPrice = new int?(69);
+            shop.item[nextSlot].shopSpecialCurrency = TestMod.dogecoin;
+            nextSlot++;
         }
     }
 }
